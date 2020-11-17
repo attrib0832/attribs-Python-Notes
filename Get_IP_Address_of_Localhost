@@ -1,0 +1,25 @@
+#   IP Address Finder by NeutralNine (youtube vlog)
+#   how to get Hostname, Local_ip, Public_Ip
+#   using Python code
+#   note: import requests for getting public ip
+#   py -m pip install requests
+
+
+
+import socket
+from requests import get
+
+hostname = socket.gethostname()
+local_ip = socket.gethostbyname(hostname)
+public_ip = get('https://api.ipify.org').text
+
+print(f"hostname : {hostname}")
+print(f"local_ip : {local_ip}")
+print(f"public_ip : {public_ip}")
+
+
+
+
+# hostname : DESKTOP-JB7EAT3
+# local_ip : 172.16.1.19
+# public_ip : 83.110.248.161
