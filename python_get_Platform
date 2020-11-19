@@ -1,0 +1,23 @@
+# -*- coding: utf-8 -*-
+"""
+Python command for getting 
+1. OS platform
+2. Computer Name
+3. Local IP Address
+4. Public IP Address
+
+"""
+import socket
+import platform
+from requests import get
+
+my_platform = platform.system()
+hostname = socket.gethostname()
+local_ip = socket.gethostbyname(hostname)
+public_ip = get('https://api.ipify.org').text
+
+
+print(f'Plat form use is {my_platform}')
+print(f'Computer Name is {hostname}')
+print(f'Local IP Address is {local_ip}')
+print(f'Public IP Address is {public_ip}')
